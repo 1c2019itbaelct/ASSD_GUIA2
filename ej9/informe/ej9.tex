@@ -1,72 +1,14 @@
 \documentclass[../../guia1.tex]{subfiles}
 \begin{document}
-\section*{Ejercicio 9}
-Llamando a $x(n)=X(nT)$ y $y(n)=Y(nT)$, se obtiene la siguiente ecuación en diferencias. 
-\begin{equation}
-y(n)=\frac{1}{2} x(n-2) + \alpha y(n-1) + \beta y(n-2)  
-\end{equation}
+\section*{Ejercicio 2a}
 
-\subsection*{a}
-Siendo $\alpha = 1$ y $\beta = -\frac{1}{2}$ se simulo la respuesta al escalón y al impulso.
-\begin{figure}[H]
- \centering
-  \subfloat[Respuesta al escalón]{
-   \label{f:ejaesc}
-    \includegraphics[width=0.48\textwidth]{figures/a-escalon.png}}
-  \subfloat[Respuesta al impulso]{
-   \label{f:ejaimp}
-    \includegraphics[width=0.48\textwidth]{figures/a-impulso.png}}
+\[H(z) = \frac{z^6}{6z^6+5z^5+4z^4+3z^3+2z^2+z+1} = \frac{z^6}{f(z)}\]
 
- \caption{Gráficos de la simulación de las respuesta al impulso y al escalón}
- \label{f:eja}
-\end{figure}
-De la simulación se obtuvo que la frecuencia de oscilación en función de $nT$ es $f= \frac{1}{8}$.
-\subsection*{b}
-Siendo $\alpha = \frac{1}{2}$ y $\beta = -\frac{1}{8}$ se simulo la respuesta al escalón y al impulso.
-\begin{figure}[H]
- \centering
-  \subfloat[Respuesta al escalón]{
-   \label{f:ejbesc}
-    \includegraphics[width=0.45\textwidth]{figures/b-escalon.png}}
-  \subfloat[Respuesta al impulso]{
-   \label{f:ejbimp}
-    \includegraphics[width=0.45\textwidth]{figures/b-impulso.png}}
-
- \caption{Gráficos de la simulación de las respuesta al impulso y al escalón}
- \label{f:ejb}
-\end{figure}
-
-\subsection*{c}
-Siendo $\alpha = 1$ y $\beta = -\frac{1}{2}$ se simulo la respuesta al escalón y al impulso.
-\begin{figure}[H]
- \centering
-  \subfloat[Respuesta al escalón]{
-   \label{f:ejcesc}
-    \includegraphics[width=0.7\textwidth]{figures/c-escalon.png}}
-  \subfloat[Respuesta al impulso]{
-   \label{f:ejcimp}
-    \includegraphics[width=0.7\textwidth]{figures/c-impulso.png}}
-
- \caption{Gráficos de la simulación de las respuesta al impulso y al escalón}
- \label{f:ejc}
-\end{figure}
-De la simulación se obtuvo que la frecuencia de oscilación en función de $nT$ es $f= \frac{1}{7}$
-\subsection*{Respuesta en frecuencia}
-Para hallar el modulo de la respuesta en frecuencia, se ingreso al sistema con un seno de amplitud unitario y un tiempo mayor al del establecimiento, se midió el máximo de la se\~nal de entrada. Dicho proceso se repitió para distintas frecuencias entre 0 y $\frac{w_s}{2} $
-
-\begin{figure}[H]
-  \centering
-   \includegraphics[width=0.9\textwidth]{figures/rtaFrec.png}
-  \caption{Modulo de la respuesta en frecuencia simulada}
-  \label{fig:rtaFrecFin}
-\end{figure}
-\subsection{Análisis de resultados}
-Como se observa las respuesta del sistema, con los parámetros de los casos $a$ y $c$, corresponde a un sistema subamortiguado. En el caso $a$ corresponde a un sistema subamortiguado con un factor de amortiguamiento mayor que el caso $c$.
-\par El caso de $c$ corresponde a un sistema críticamente amortiguado.
+Para verificar la estabilidad del filtro, se utiliz\'o el criterio de estabilidad Jury-Marden\footnote{\textsc{A determinant criterion for stability analysis and design of linear discrete systems}, Ramesh Periyasamy, Manikandan Venugopal. }. A continuaci\'on se adjunta el c\'alculo realizado en \textsc{Matlab}. Dado que los determinantes internos son positivos, se verifica la estabilidad del filtro.
 
 
 
-
+\verbatiminput{script.txt}
 
 
 \end{document}
