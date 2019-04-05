@@ -1,0 +1,77 @@
+\documentclass[../../guia1.tex]{subfiles}
+\begin{document}
+
+\section*{Ejercicio 1}
+
+\subsection*{Ej 2b-Guia sistema discretos}
+A partir del diagrama de bloques, se obtuvo el siguiente sistema de ecuaciones que describen al sistema.
+\begin{equation}
+g(n)=x(n) + g(n-1) - \frac{1}{2} g(n-2) \label{eq:2b1}
+\end{equation}
+\begin{equation}
+y(n)=g(n-1)+g(n) \label{eq:2b2}
+\end{equation}
+Donde $g(n)$ es la se\~nal entre los dos sumadores.
+
+Aplicando la transformada z a cada termino de las ecuaciones
+\begin{equation}
+Z[x(n)]=X(z)
+\end{equation}
+
+\begin{equation}
+Z[g(n)]=G(z)
+\end{equation}
+
+\begin{equation}
+Z[y(n)]=Y(z)
+\end{equation}
+
+\begin{equation}
+Z[g(n-1)]=G(z) z^{-1}
+\end{equation}
+
+\begin{equation}
+Z[g(n-2)]=G(z) z^{-2}
+\end{equation}
+
+Reemplazando en el sistema de ecuaciones original, se obtiene un nuevo sistema de ecuaciones:
+\begin{equation}
+G(z)\left( 1- z^{-1} - \frac{1}{2} z^{-2} \right)=X(z)
+\end{equation}
+
+\begin{equation}
+Y(z)=G(z)\left( 1+ z^{-1}\right)
+\end{equation}
+
+Igualando las ecuaciones se obtiene la solución final:
+\begin{equation}
+\left( 1- z^{-1} - \frac{1}{2} z^{-2} \right) Y(z) = X(z)\left( 1+ z^{-1}\right)
+\end{equation}
+
+Aplicando la anti transformada Z se obtiene la solucione en el tiempo, la misma que se obtuvo en la guia anterior.
+\begin{equation}
+y(n)=x(n)+x(n-1)+y(n-1)-\frac{1}{2}y(n-2)
+\end{equation}
+
+\subsection*{Ej 9-Guia sistema discretos}
+Llamando a $x(n)=X(nT)$ y $y(n)=Y(nT)$, se obtiene la siguiente ecuación en diferencias. 
+\begin{equation}
+y(n)=\frac{1}{2} x(n-2) + \alpha y(n-1) + \beta y(n-2)  
+\end{equation}
+
+Aplicando la transformada Z a la ecuacion en diferencias, se obtiene la siguiente escuacion:
+\begin{equation}
+Y(z)\left[ 1 - \alpha z^{-1} - \beta z^{-2} \right] = \frac{1}{2} z^{-2} X(z)
+\end{equation}
+Reescribiendo la ecuación se obtiene la transferencia
+\begin{equation}
+H(z)=\frac{Y(z)}{X(z)}=\frac{\frac{1}{2}}{z^{2} - \alpha z - \beta }
+\end{equation}
+
+Los polos de la transferencia son:
+\begin{equation}
+Z_{1,2}=\frac{\alpha \pm \sqrt{\alpha ^ 2 + 4 \beta}  }{2}
+\end{equation}
+
+
+\end{document}
