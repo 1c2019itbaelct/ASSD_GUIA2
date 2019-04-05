@@ -2,6 +2,7 @@
 \makeatletter 
 \def\input@path{{../../}} 
 \makeatother
+\newcommand{\pathxd}{}
 \input{extra/preamble.tex}
  
 \begin{document}
@@ -20,7 +21,7 @@
 \subfile{ej2.tex}
 \let\input=\oldinput
 
-
+\renewcommand{\pathxd}[0]{ej9/informe/}%will not be read by subfiles
 \let\oldinput=\input
 \def\input#1{\oldinput{ej9/informe/#1}}	
 \subfile{ej9.tex}
