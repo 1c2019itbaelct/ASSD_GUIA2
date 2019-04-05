@@ -15,17 +15,17 @@
 \subfile{ej1.tex}
 \let\input=\oldinput
 
+\renewcommand{\pathxd}[0]{ej9/informe/}%will not be read by subfiles
+\let\oldinput=\input
+\def\input#1{\oldinput{ej9/informe/#1}}	
+\subfile{ej9.tex}
+\let\input=\oldinput
 
 \let\oldinput=\input
 \def\input#1{\oldinput{ej2/informe/#1}}	
 \subfile{ej2.tex}
 \let\input=\oldinput
 
-\renewcommand{\pathxd}[0]{ej9/informe/}%will not be read by subfiles
-\let\oldinput=\input
-\def\input#1{\oldinput{ej9/informe/#1}}	
-\subfile{ej9.tex}
-\let\input=\oldinput
 
 
 
